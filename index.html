@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <form action="/calcula" method="POST">
+        <input type="text" name="numero1" id="numero1"/>
+        <select name="operador" id="operador">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="x">x</option>
+        </select>
+        <input type="text" name="numero2" id="numero2"/>
+        <input type="submit" value="Calcular"/>
+    </form>
+    <div th:text="${mensagem}"></div>
+
+    <ul>
+        <li th:each="calculo : ${historico}" th:text="${calculo}"></li>
+    </ul>
+        
+</body>
+</html>
